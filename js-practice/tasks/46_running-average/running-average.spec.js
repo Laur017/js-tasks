@@ -1,7 +1,11 @@
 // import { runningAverage } from './running-average';
 
 describe.skip('runningAverage', () => {
-  const rAvg = runningAverage();
+  let rAvg;
+
+  beforeEach(() => {
+    rAvg = runningAverage();
+  });
 
   it('should return a function', () => {
     expect(typeof rAvg).toBe('function');

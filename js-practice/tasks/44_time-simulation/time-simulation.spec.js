@@ -1,7 +1,11 @@
 // import { TimeSimulation } from './time-simulation';
 
 describe.skip('TimeSimulation', () => {
-  const sim = new TimeSimulation();
+  let sim;
+
+  beforeEach(() => {
+    sim = new TimeSimulation();
+  });
 
   it('time should be counted from zero', () => {
     expect(sim.get()).toBe(0);

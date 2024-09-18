@@ -1,7 +1,11 @@
 // import { God, Human, Man, Woman } from './basic-subclasses';
 
 describe.skip('basic subclasses', () => {
-  const humans = God.create();
+  let humans;
+
+  beforeEach(() => {
+    humans = God.create();
+  });
 
   it('God should create two humans', () => {
     expect(humans[0] instanceof Human).toBe(true);
