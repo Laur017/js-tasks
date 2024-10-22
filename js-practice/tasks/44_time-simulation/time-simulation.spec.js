@@ -3,7 +3,7 @@
 describe.skip('TimeSimulation', () => {
   let sim;
 
-  beforeEach(() => {
+  beforeAll(() => {
     sim = new TimeSimulation();
   });
 
