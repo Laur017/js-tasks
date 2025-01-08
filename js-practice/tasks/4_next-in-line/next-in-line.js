@@ -3,5 +3,4 @@ const nextInLine = (array, number) => {
   return array.shift();
 };
 
-console.log(nextInLine([], 1));
-console.log(nextInLine([3, 2], 1));
+export { nextInLine };
