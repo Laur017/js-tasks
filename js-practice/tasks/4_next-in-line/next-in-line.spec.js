@@ -1,4 +1,4 @@
-// import { nextInLine } from './next-in-line';
+import { nextInLine } from './next-in-line';
 
 describe.skip('nextInLine', () => {
   it('nextInLine([], 1) should return 1', () => {
