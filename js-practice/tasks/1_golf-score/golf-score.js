@@ -27,6 +27,4 @@ const golfScore = (par, strokes) => {
   return message;
 };
 
-console.log(golfScore(4, 1));
-console.log(golfScore(4, 2));
-console.log(golfScore(5, 9));
+export { golfScore };
