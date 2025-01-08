@@ -1,4 +1,4 @@
-const golfScore = (par, strokes) => {
+export const golfScore = (par, strokes) => {
   let message = '';
 
   switch (true) {
@@ -27,4 +27,4 @@ const golfScore = (par, strokes) => {
   return message;
 };
 
-export { golfScore };
+// export { golfScore };
