@@ -1,6 +1,6 @@
-// import { checkLetters } from './check-letters';
+import { checkLetters } from './check-letters';
 
-describe.skip('checkLetters', () => {
+describe('checkLetters', () => {
   it('checkLetters(["hello", "hey"]) should return false', () => {
     expect(checkLetters(['hello', 'hey'])).toBe(false);
   });
@@ -17,8 +17,8 @@ describe.skip('checkLetters', () => {
     expect(checkLetters(['Mary', 'Army'])).toBe(true);
   });
 
-  it('checkLetters(["Mary", "Aarmy"]) should return true', () => {
-    expect(checkLetters(['Mary', 'Aarmy'])).toBe(true);
+  it('checkLetters(["Mary", "Aarmy"]) should return false', () => {
+    expect(checkLetters(['Mary', 'Aarmy'])).toBe(false);
   });
 
   it('checkLetters(["Alien", "line"]) should return true', () => {
