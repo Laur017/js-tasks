@@ -1,18 +1,9 @@
 export const lookupProfile = (name, prop) => {
-  let indexContact = -1;
-  for (const indx in contacts) {
-    if (contacts[indx].firstName === name) {
-      indexContact = indx;
-      break;
-    }
-  }
-  if (indexContact === -1) {
-    return 'No such contact';
-  } else if (contacts[indexContact].hasOwnProperty(prop)) {
-    return contacts[indexContact][prop];
-  } else {
-    return 'No such property';
-  }
+  const contact = contacts.find((contact) => contact.firstName === name);
+
+  if (!contact) return 'No such contact';
+
+  return contact.hasOwnProperty(prop) ? contact[prop] : 'No such property';
 };
 
 const contacts = [
@@ -42,5 +33,3 @@ const contacts = [
     likes: ['JavaScript', 'Gaming', 'Foxes']
   }
 ];
-
-console.log(lookupProfile('Kristian', 'lastName'));
