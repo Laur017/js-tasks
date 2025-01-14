@@ -1,30 +1,28 @@
 export const golfScore = (par, strokes) => {
-  let message = '';
+  const GOLF_SCORES = {
+    HOLE_IN_ONE: 'Hole-in-one!',
+    EAGLE: 'Eagle',
+    BIRDIE: 'Birdie',
+    PAR: 'Par',
+    BOGEY: 'Bogey',
+    DOUBLE_BOGEY: 'Double Bogey',
+    GO_HOME: 'Go Home!'
+  };
 
   switch (true) {
     case strokes === 1:
-      message = 'Hole-in-one!';
-      break;
+      return GOLF_SCORES.HOLE_IN_ONE;
     case strokes <= par - 2:
-      message = 'Eagle';
-      break;
+      return GOLF_SCORES.EAGLE;
     case strokes === par - 1:
-      message = 'Birdie';
-      break;
+      return GOLF_SCORES.BIRDIE;
     case strokes === par:
-      message = 'Par';
-      break;
+      return GOLF_SCORES.PAR;
     case strokes === par + 1:
-      message = 'Bogey';
-      break;
+      return GOLF_SCORES.BOGEY;
     case strokes === par + 2:
-      message = 'Double Bogey';
-      break;
+      return GOLF_SCORES.DOUBLE_BOGEY;
     case strokes >= par + 3:
-      message = 'Go Home!';
-      break;
+      return GOLF_SCORES.GO_HOME;
   }
-  return message;
 };
-
-// export { golfScore };
