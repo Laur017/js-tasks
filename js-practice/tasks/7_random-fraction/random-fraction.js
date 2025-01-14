@@ -1,3 +1,4 @@
 export const randomFraction = () => {
-  return Math.random();
+  const number = Math.random();
+  return number !== 0 ? number : randomFraction();
 };
