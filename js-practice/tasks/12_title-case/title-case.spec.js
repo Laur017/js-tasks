@@ -16,4 +16,8 @@ describe('titleCase', () => {
   it('titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return "Here Is My Handle Here Is My Spout"', () => {
     expect(titleCase('HERE IS MY HANDLE HERE IS MY SPOUT')).toBe('Here Is My Handle Here Is My Spout');
   });
+
+  it('titleCase("hde he hdxh.               agagaxw d") should return "Hde He Hdxh.               Agagaxw D"', () => {
+    expect(titleCase('hde he hdxh.               agagaxw d')).toBe('Hde He Hdxh.               Agagaxw D');
+  });
 });
