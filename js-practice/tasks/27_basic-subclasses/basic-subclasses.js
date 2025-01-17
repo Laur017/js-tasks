@@ -1,20 +1,20 @@
 export class Human {
-  constructor(sex) {
-    this.sex = sex;
+  constructor(name) {
+    this.name = name;
   }
 }
 
 export class Man extends Human {
   constructor(name) {
-    super('male');
-    this.name = name;
+    super(name);
+    this.sex = 'male';
   }
 }
 
 export class Woman extends Human {
   constructor(name) {
-    super('female');
-    this.name = name;
+    super(name);
+    this.sex = 'female';
   }
 }
 
