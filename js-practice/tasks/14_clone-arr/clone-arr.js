@@ -1,1 +1,1 @@
-export const cloneArr = (arr) => [...arr];
+export const cloneArr = (arr) => JSON.parse(JSON.stringify(arr));
