@@ -6,6 +6,5 @@ export const missedLetters = (str) => {
       return String.fromCharCode(arrOfLetters[i].charCodeAt() + 1);
     }
   }
-
   return undefined;
 };
