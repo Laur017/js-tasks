@@ -3,7 +3,7 @@
 describe.skip('runningAverage', () => {
   let rAvg;
 
-  beforeEach(() => {
+  beforeAll(() => {
     rAvg = runningAverage();
   });
 
