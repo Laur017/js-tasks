@@ -1,6 +1,6 @@
-// import { LinkedList } from './linked-list';
+import { LinkedList } from './linked-list';
 
-describe.skip('LinkedList', () => {
+describe('LinkedList', () => {
   let list;
 
   beforeEach(() => {
