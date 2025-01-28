@@ -1,0 +1,1 @@
+export const confirmEnding = (str, target) => str.substr(-target.length) === target;
