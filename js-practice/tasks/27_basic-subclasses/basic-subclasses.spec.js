@@ -1,6 +1,6 @@
-// import { God, Human, Man, Woman } from './basic-subclasses';
+import { God, Human, Man, Woman } from './basic-subclasses';
 
-describe.skip('basic subclasses', () => {
+describe('basic subclasses', () => {
   let humans;
 
   beforeEach(() => {
