@@ -1,12 +1,12 @@
-// import { peopleInBus } from './people-in-bus';
+import { peopleInBus } from './people-in-bus';
 
-describe.skip('peopleInBus', () => {
+describe('peopleInBus', () => {
   it('peopleInBus([[10, 0], [3, 5], [5, 8]]) should return 5', () => {
     expect(
       peopleInBus([
         [10, 0],
         [3, 5],
-        [5, 8],
+        [5, 8]
       ])
     ).toBe(5);
   });
@@ -19,7 +19,7 @@ describe.skip('peopleInBus', () => {
         [4, 10],
         [12, 2],
         [6, 1],
-        [7, 10],
+        [7, 10]
       ])
     ).toBe(17);
   });
@@ -32,7 +32,7 @@ describe.skip('peopleInBus', () => {
         [4, 8],
         [12, 2],
         [6, 1],
-        [7, 8],
+        [7, 8]
       ])
     ).toBe(21);
   });
