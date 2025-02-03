@@ -1,6 +1,6 @@
-// import { Stack } from './stack';
+import { Stack } from './stack';
 
-describe.skip('Stack', () => {
+describe('Stack', () => {
   let stack;
   const firstNodeValue = 5;
   const secondNodeValue = 6;
