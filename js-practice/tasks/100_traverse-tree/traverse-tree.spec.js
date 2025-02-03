@@ -1,24 +1,24 @@
-// import { traverseTree } from './traverse-tree';
+import { traverseTree } from './traverse-tree';
 
-describe.skip('traverseTree', () => {
+describe('traverseTree', () => {
   it('should call callback for every of tree nodes', () => {
     const tree = {
       value: 1,
       children: [
         {
           value: 2,
-          children: [],
+          children: []
         },
         {
           value: 99,
           children: [
             {
               value: 100,
-              children: [],
-            },
-          ],
-        },
-      ],
+              children: []
+            }
+          ]
+        }
+      ]
     };
 
     const resultArray = [];
