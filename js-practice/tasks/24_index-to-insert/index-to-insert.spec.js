@@ -1,6 +1,6 @@
-// import { indexToInsert } from './index-to-insert';
+import { indexToInsert } from './index-to-insert';
 
-describe.skip('indexToInsert', () => {
+describe('indexToInsert', () => {
   it('indexToInsert([10, 20, 30, 40, 50], 35) should return 3', () => {
     expect(indexToInsert([10, 20, 30, 40, 50], 35)).toBe(3);
   });
@@ -27,5 +27,9 @@ describe.skip('indexToInsert', () => {
 
   it('indexToInsert([2, 5, 10], 15) should return 3', () => {
     expect(indexToInsert([2, 5, 10], 15)).toBe(3);
+  });
+
+  it('indexToInsert([1, 2, 3], 0) should return 0', () => {
+    expect(indexToInsert([1, 2, 3], 0)).toBe(0);
   });
 });
