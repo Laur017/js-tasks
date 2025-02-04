@@ -1,13 +1,13 @@
-// import { followTheSpy } from './follow-the-spy';
+import { followTheSpy } from './follow-the-spy';
 
-describe.skip('followTheSpy', () => {
+describe('followTheSpy', () => {
   it('followTheSpy([["USA", "BRA"], ["JPN", "PHL"], ["UAE", "JPN"], ["BRA", "UAE"]]) should return a string', () => {
     expect(
       typeof followTheSpy([
         ['USA', 'BRA'],
         ['JPN', 'PHL'],
         ['UAE', 'JPN'],
-        ['BRA', 'UAE'],
+        ['BRA', 'UAE']
       ])
     ).toBe('string');
   });
@@ -18,7 +18,7 @@ describe.skip('followTheSpy', () => {
         ['USA', 'BRA'],
         ['JPN', 'PHL'],
         ['UAE', 'JPN'],
-        ['BRA', 'UAE'],
+        ['BRA', 'UAE']
       ])
     ).toBe('USA, BRA, UAE, JPN, PHL');
   });
@@ -29,7 +29,7 @@ describe.skip('followTheSpy', () => {
         ['JPN', 'PHL'],
         ['USA', 'BRA'],
         ['UAE', 'JPN'],
-        ['BRA', 'UAE'],
+        ['BRA', 'UAE']
       ])
     ).toBe('USA, BRA, UAE, JPN, PHL');
   });
