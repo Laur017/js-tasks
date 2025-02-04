@@ -1,6 +1,11 @@
 export const carrying = (n, m) => {
-  if (m !== undefined) {
-    return n + m;
+  if (typeof n !== 'number') {
+    return undefined;
   }
-  return (m) => (typeof m === 'number' && typeof n === 'number' ? n + m : undefined);
+
+  if (m !== undefined) {
+    return typeof m === 'number' ? n + m : undefined;
+  }
+
+  return (m) => (typeof m === 'number' ? n + m : undefined);
 };
