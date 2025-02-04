@@ -1,13 +1,16 @@
 export const validBraces = (str) => {
-  const obj = [...str].reduce((acc, cur) => {
-    acc.hasOwnProperty(cur) ? (acc[cur] = acc[cur] + 1) : (acc[cur] = 1);
-    return acc;
-  }, {});
-  return obj.hasOwnProperty('(')
-    ? obj['('] === obj[')']
-    : obj.hasOwnProperty('[')
-      ? obj['['] === obj[']']
-      : obj.hasOwnProperty('{')
-        ? obj['{'] === obj['}']
-        : true;
+  const stack = [];
+  const pair = { '(': ')', '{': '}', '[': ']' };
+
+  for (let char of str) {
+    if (pair[char]) {
+      stack.push(char);
+    } else {
+      if (stack.pop() !== Object.keys(pair).find((key) => pair[key] === char)) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
 };
