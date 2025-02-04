@@ -1,10 +1,14 @@
 export const pairwise = (arr, arg) => {
   let sum = 0;
-  for (let i = 0; i < arr.length - 1; i++) {
+  const used = new Set();
+
+  for (let i = 0; i < arr.length; i++) {
+    if (used.has(i)) continue;
     for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] + arr[j] === arg) {
+      if (!used.has(j) && arr[i] + arr[j] === arg) {
         sum += i + j;
-        arr[i] = arr[j] = null;
+        used.add(i);
+        used.add(j);
         break;
       }
     }
