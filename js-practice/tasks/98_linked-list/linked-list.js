@@ -1,6 +1,6 @@
 class Node {
-  constructor(data) {
-    this.data = data;
+  constructor(value) {
+    this.value = value;
     this.next = null;
     this.prev = null;
   }
@@ -13,85 +13,99 @@ export class LinkedList {
     this.amount = 0;
   }
 
-  push(data) {
-    let newNode = new Node(data);
+  push(value) {
+    const newNode = new Node(value);
 
-    if (this.tail === null) {
-      this.head = this.tail = newNode;
+    if (!this.head) {
+      this.head = newNode;
+      this.tail = newNode;
     } else {
       this.tail.next = newNode;
       newNode.prev = this.tail;
       this.tail = newNode;
     }
+
     this.amount++;
   }
 
   pop() {
-    if (this.tail === null) {
-      return null;
-    }
-    let data = this.tail.data;
-    if (this.head === this.tail) {
-      this.head = this.tail = null;
+    if (!this.tail) return null;
+
+    const poppedValue = this.tail.value;
+
+    if (this.tail === this.head) {
+      this.head = null;
+      this.tail = null;
     } else {
       this.tail = this.tail.prev;
       this.tail.next = null;
     }
+
     this.amount--;
-    return this.tail.data;
+    return poppedValue;
   }
 
-  *iterate() {
-    let current = this.head;
-    while (current) {
-      yield current.data;
-      current = current.next;
+  iterate(callback) {
+    let currentNode = this.head;
+
+    while (currentNode) {
+      callback(currentNode);
+      currentNode = currentNode.next;
     }
   }
 
-  insertAfter(prevData, data) {
-    let current = this.head;
-    while (current && current.data !== prevData) {
-      current = current.next;
+  insertAfter(targetValue, newValue) {
+    let currentNode = this.head;
+
+    while (currentNode) {
+      if (currentNode.value === targetValue) {
+        const newNode = new Node(newValue);
+
+        if (currentNode === this.tail) {
+          currentNode.next = newNode;
+          newNode.prev = currentNode;
+          this.tail = newNode;
+        } else {
+          newNode.next = currentNode.next;
+          newNode.prev = currentNode;
+          currentNode.next.prev = newNode;
+          currentNode.next = newNode;
+        }
+
+        this.amount++;
+        return true;
+      }
+      currentNode = currentNode.next;
     }
-    if (current === null) {
-      return false;
-    }
-    let newNode = new Node(data);
-    newNode.next = current.next;
-    newNode.prev = current;
-    if (current.next) {
-      current.next.prev = newNode;
-    }
-    current.next = newNode;
-    if (current === this.tail) {
-      this.tail = newNode;
-    }
-    this.amount++;
-    return true;
+
+    return false;
   }
 
-  removeItem(data) {
-    let current = this.head;
-    while (current && current.data !== data) {
-      current = current.next;
+  removeItem(value) {
+    let currentNode = this.head;
+
+    while (currentNode) {
+      if (currentNode.value === value) {
+        if (currentNode === this.head && currentNode === this.tail) {
+          this.head = null;
+          this.tail = null;
+        } else if (currentNode === this.head) {
+          this.head = currentNode.next;
+          this.head.prev = null;
+        } else if (currentNode === this.tail) {
+          this.tail = currentNode.prev;
+          this.tail.next = null;
+        } else {
+          currentNode.prev.next = currentNode.next;
+          currentNode.next.prev = currentNode.prev;
+        }
+
+        this.amount--;
+        return true;
+      }
+      currentNode = currentNode.next;
     }
-    if (current === null) {
-      return false;
-    }
-    if (current.prev) {
-      current.prev.next = current.next;
-    }
-    if (current.next) {
-      current.next.prev = current.prev;
-    }
-    if (current === this.head) {
-      this.head = current.next;
-    }
-    if (current === this.tail) {
-      this.tail = current.prev;
-    }
-    this.amount--;
-    return true;
+
+    return false;
   }
 }
