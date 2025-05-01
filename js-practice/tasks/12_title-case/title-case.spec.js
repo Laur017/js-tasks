@@ -1,6 +1,6 @@
-// import { titleCase } from './title-case';
+import { titleCase } from './title-case';
 
-describe.skip('titleCase', () => {
+describe('titleCase', () => {
   it('titleCase("I\'m a little tea pot") should return a string', () => {
     expect(typeof titleCase("I'm a little tea pot")).toBe('string');
   });
@@ -15,5 +15,9 @@ describe.skip('titleCase', () => {
 
   it('titleCase("HERE IS MY HANDLE HERE IS MY SPOUT") should return "Here Is My Handle Here Is My Spout"', () => {
     expect(titleCase('HERE IS MY HANDLE HERE IS MY SPOUT')).toBe('Here Is My Handle Here Is My Spout');
+  });
+
+  it('titleCase("hde he hdxh.               agagaxw d") should return "Hde He Hdxh.               Agagaxw D"', () => {
+    expect(titleCase('hde he hdxh.               agagaxw d')).toBe('Hde He Hdxh.               Agagaxw D');
   });
 });

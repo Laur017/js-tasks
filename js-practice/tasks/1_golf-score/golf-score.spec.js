@@ -1,6 +1,6 @@
-// import { golfScore } from './golf-score';
+import { golfScore } from './golf-score';
 
-describe.skip('golfScore', () => {
+describe('golfScore', () => {
   it('golfScore(4, 1) should return "Hole-in-one!"', () => {
     expect(golfScore(4, 1)).toBe('Hole-in-one!');
   });
